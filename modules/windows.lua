@@ -15,7 +15,7 @@ local mouse = require "hs.mouse"
 window.animationDuration = 0
 
 -- left half
-hotkey.bind(hyper, "Left", function()
+hotkey.bind(hyperAlt, "Left", function()
   if window.focusedWindow() then
     window.focusedWindow():moveToUnit(layout.left50)
   else
@@ -24,37 +24,37 @@ hotkey.bind(hyper, "Left", function()
 end)
 
 -- right half
-hotkey.bind(hyper, "Right", function()
+hotkey.bind(hyperAlt, "Right", function()
   window.focusedWindow():moveToUnit(layout.right50)
 end)
 
 -- top half
-hotkey.bind(hyper, "Up", function()
+hotkey.bind(hyperAlt, "Up", function()
   window.focusedWindow():moveToUnit'[0,0,100,50]'
 end)
 
 -- bottom half
-hotkey.bind(hyper, "Down", function()
+hotkey.bind(hyperAlt, "Down", function()
   window.focusedWindow():moveToUnit'[0,50,100,100]'
 end)
 
 -- left top quarter
-hotkey.bind(hyperAlt, "Left", function()
+hotkey.bind(hyper, "Left", function()
   window.focusedWindow():moveToUnit'[0,0,50,50]'
 end)
 
 -- right bottom quarter
-hotkey.bind(hyperAlt, "Right", function()
+hotkey.bind(hyper, "Right", function()
   window.focusedWindow():moveToUnit'[50,50,100,100]'
 end)
 
 -- right top quarter
-hotkey.bind(hyperAlt, "Up", function()
+hotkey.bind(hyper, "Up", function()
   window.focusedWindow():moveToUnit'[50,0,100,50]'
 end)
 
 -- left bottom quarter
-hotkey.bind(hyperAlt, "Down", function()
+hotkey.bind(hyper, "Down", function()
   window.focusedWindow():moveToUnit'[0,50,50,100]'
 end)
 
