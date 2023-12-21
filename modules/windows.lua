@@ -15,7 +15,7 @@ local mouse = require "hs.mouse"
 window.animationDuration = 0
 
 -- left half
-hotkey.bind(hyperAlt, "Left", function()
+hotkey.bind(hyperCtrl, 'H', function()
   if window.focusedWindow() then
     window.focusedWindow():moveToUnit(layout.left50)
   else
@@ -24,39 +24,39 @@ hotkey.bind(hyperAlt, "Left", function()
 end)
 
 -- right half
-hotkey.bind(hyperAlt, "Right", function()
+hotkey.bind(hyperCtrl, 'L', function()
   window.focusedWindow():moveToUnit(layout.right50)
 end)
 
 -- top half
-hotkey.bind(hyperAlt, "Up", function()
+hotkey.bind(hyperCtrl, 'K', function()
   window.focusedWindow():moveToUnit'[0,0,100,50]'
 end)
 
 -- bottom half
-hotkey.bind(hyperAlt, "Down", function()
+hotkey.bind(hyperCtrl, 'J', function()
   window.focusedWindow():moveToUnit'[0,50,100,100]'
 end)
 
--- left top quarter
-hotkey.bind(hyper, "Left", function()
-  window.focusedWindow():moveToUnit'[0,0,50,50]'
-end)
-
--- right bottom quarter
-hotkey.bind(hyper, "Right", function()
-  window.focusedWindow():moveToUnit'[50,50,100,100]'
-end)
-
--- right top quarter
-hotkey.bind(hyper, "Up", function()
-  window.focusedWindow():moveToUnit'[50,0,100,50]'
-end)
-
--- left bottom quarter
-hotkey.bind(hyper, "Down", function()
-  window.focusedWindow():moveToUnit'[0,50,50,100]'
-end)
+---- left top quarter
+--hotkey.bind(hyper, "Left", function()
+--  window.focusedWindow():moveToUnit'[0,0,50,50]'
+--end)
+--
+---- right bottom quarter
+--hotkey.bind(hyper, "Right", function()
+--  window.focusedWindow():moveToUnit'[50,50,100,100]'
+--end)
+--
+---- right top quarter
+--hotkey.bind(hyper, "Up", function()
+--  window.focusedWindow():moveToUnit'[50,0,100,50]'
+--end)
+--
+---- left bottom quarter
+--hotkey.bind(hyper, "Down", function()
+--  window.focusedWindow():moveToUnit'[0,50,50,100]'
+--end)
 
 -- full screen
 hotkey.bind(hyper, 'F', function() 
@@ -69,7 +69,7 @@ hotkey.bind(hyper, 'C', function()
 end)
 
 -- maximize window
-hotkey.bind(hyper, 'M', function() toggle_maximize() end)
+-- hotkey.bind(hyper, 'M', function() toggle_maximize() end)
 
 -- defines for window maximize toggler
 local frameCache = {}
@@ -86,11 +86,11 @@ function toggle_maximize()
 end
 
 -- display a keyboard hint for switching focus to each window
-hotkey.bind(hyperShift, '/', function()
-    hints.windowHints()
-    -- Display current application window
-    -- hints.windowHints(hs.window.focusedWindow():application():allWindows())
-end)
+-- hotkey.bind(hyperShift, '/', function()
+--     hints.windowHints()
+--     -- Display current application window
+--     -- hints.windowHints(hs.window.focusedWindow():application():allWindows())
+-- end)
 
 -- switch active window
 hotkey.bind(hyperShift, "H", function()
