@@ -11,6 +11,54 @@ local fnutils = require "hs.fnutils"
 local geometry = require "hs.geometry"
 local mouse = require "hs.mouse"
 
+function printAllSpacesLayout()
+    local spacesLayout = hs.spaces.allSpaces()
+
+    for appBundleID, appSpaces in pairs(spacesLayout) do
+        print("Application:", appBundleID)
+        for spaceID, spaceName in pairs(appSpaces) do
+            print("  Space ID:", spaceID, "Space Name:", spaceName)
+        end
+    end
+end
+
+-- 在HammerSpoon中绑定快捷键
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "l", printAllSpacesLayout)
+
+function moveFocusedAppToDesktop(win, desktopNumber)
+    --local app = hs.application.frontmostApplication()
+    local spacesLayout = hs.spaces.allSpaces()
+
+    for appBundleID, appSpaces in pairs(spacesLayout) do
+        print("Application:", appBundleID)
+        for spaceID, spaceName in pairs(appSpaces) do
+            if spaceID == desktopNumber then
+  		hs.spaces.moveWindowToSpace(win, spaceName, true)
+            	print("  Space ID:", spaceID, "Space Name:", spaceName)
+	    end
+        end
+    end
+end
+
+hotkey.bind(hyperCtrl, '1', function()
+   local win = window.focusedWindow()
+   moveFocusedAppToDesktop(win, 1)
+end)
+
+hotkey.bind(hyperCtrl, '2', function()
+   local win = window.focusedWindow()
+   moveFocusedAppToDesktop(win, 2)
+end)
+hotkey.bind(hyperCtrl, '3', function()
+   local win = window.focusedWindow()
+   moveFocusedAppToDesktop(win, 3)
+end)
+hotkey.bind(hyperCtrl, '4', function()
+   local win = window.focusedWindow()
+   moveFocusedAppToDesktop(win, 4)
+end)
+
+
 -- default 0.2
 window.animationDuration = 0
 
