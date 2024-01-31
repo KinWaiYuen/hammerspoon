@@ -107,7 +107,7 @@ end)
 --end)
 
 -- full screen
-hotkey.bind(hyper, 'F', function() 
+hotkey.bind(hyperCtrl, 'F', function() 
   window.focusedWindow():toggleFullScreen()
 end)
 
@@ -156,9 +156,9 @@ hotkey.bind(hyperShift, "Right", function()
 end)
 
 -- move cursor to previous monitor
-hotkey.bind(hyperCtrl, "Right", function ()
-  focusScreen(window.focusedWindow():screen():previous())
-end)
+--hotkey.bind(hyperCtrl, "Right", function ()
+--  focusScreen(window.focusedWindow():screen():previous())
+--end)
 
 -- move cursor to next monitor
 hotkey.bind(hyperCtrl, "Left", function ()
@@ -205,6 +205,8 @@ end
 -- move cursor to monitor 1 and maximize the window
 hotkey.bind(hyperShift, "1", function()
   local win = window.focusedWindow()
+  moveto(win, 1)
+  window.focusedWindow():centerOnScreen()
   moveto(win, 1)
 end)
 
