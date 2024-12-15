@@ -57,6 +57,10 @@ hotkey.bind(hyperCtrl, '4', function()
    local win = window.focusedWindow()
    moveFocusedAppToDesktop(win, 4)
 end)
+hotkey.bind(hyperCtrl, '5', function()
+   local win = window.focusedWindow()
+   moveFocusedAppToDesktop(win, 5)
+end)
 
 
 -- default 0.2
@@ -141,7 +145,7 @@ end
 -- end)
 
 -- switch active window
-hotkey.bind(hyperShift, "H", function()
+hotkey.bind(hyperShift, "L", function()
   window.switcher.nextWindow()
 end)
 
@@ -161,7 +165,7 @@ end)
 --end)
 
 -- move cursor to next monitor
-hotkey.bind(hyperCtrl, "Left", function ()
+hotkey.bind(hyperCtrl, "N", function ()
   focusScreen(window.focusedWindow():screen():next())
 end)
 

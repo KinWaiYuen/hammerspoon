@@ -236,9 +236,9 @@ end
 
 
 function initData()
-    setSysInfo()
+    -- setSysInfo()
     --监听系统信息开关的状态,判断是否要重置
-    hs.timer.doEvery(1, setSysInfo)
+    -- hs.timer.doEvery(1, setSysInfo)
 end
 
 -- 初始化
